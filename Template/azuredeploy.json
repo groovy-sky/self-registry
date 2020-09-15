@@ -45,7 +45,25 @@
       "properties": {
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]",
         "siteConfig": {
-            "linuxFxVersion": "[parameters('linuxFxVersion')]"
+            "linuxFxVersion": "[parameters('linuxFxVersion')]",
+            "appSettings": [
+                {
+                    "name": "DOCKER_REGISTRY_SERVER_URL",
+                    "value": "https://index.docker.io"
+                },
+                {
+                    "name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
+                    "value": "false"
+                },
+                {
+                    "name": "REGISTRY_AUTH",
+                    "value": "htpasswd"
+                },
+                {
+                    "name": "REGISTRY_STORAGE",
+                    "value": "azure"
+                }
+            ]
           }
       }
     }
