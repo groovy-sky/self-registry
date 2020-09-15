@@ -1,5 +1,6 @@
-package main
+//https://gowebexamples.com/password-hashing/
 
+package main
 
 import (
     "fmt"
