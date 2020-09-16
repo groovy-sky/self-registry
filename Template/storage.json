@@ -39,15 +39,15 @@
       "properties": {}
     },
     {
-          "type": "blobServices/containers",
+          "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
           "apiVersion": "2019-06-01",
-          "name": "[parameters('containerConfigName')]",
+          "name": "[concat(variables('storageAccountName'), '/default/', parameters('containerConfigName'))]",
           "dependsOn": ["[variables('storageAccountName')]"]
     },
     {
-          "type": "blobServices/containers",
+          "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
           "apiVersion": "2019-06-01",
-          "name": "[parameters('containerDataName')]",
+          "name": "[concat(variables('storageAccountName'), '/default/', parameters('containerDataName'))]",
           "dependsOn": ["[variables('storageAccountName')]"]
     }
   ],
