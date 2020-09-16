@@ -4,7 +4,7 @@
   "parameters": {
     "sku":{
       "type": "string",
-      "defaultValue" : "F1"
+      "defaultValue" : "B1"
     },
     "linuxFxVersion" : {
         "type": "string",
