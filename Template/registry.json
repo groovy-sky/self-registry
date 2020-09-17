@@ -13,6 +13,18 @@
     "location": {
       "type": "string",
       "defaultValue": "[resourceGroup().location]"
+    },
+    "htpasswdPath": {
+      "type": "string"
+    },
+    "storageName": {
+      "type": "string"
+    },
+    "storageKey": {
+      "type": "securestring"
+    },
+    "storageContainer": {
+      "type": "string"
     }
   },
   "variables": {
@@ -62,6 +74,26 @@
                 {
                     "name": "REGISTRY_STORAGE",
                     "value": "azure"
+                },
+                {
+                    "name": "REGISTRY_AUTH_HTPASSWD_REALM",
+                    "value": "[concat(variables('webAppPortalName'),'.azurewebsites.net')]"
+                },
+                {
+                    "name": "REGISTRY_AUTH_HTPASSWD_PATH",
+                    "value": "[parameters('htpasswdPath')]"
+                },
+                {
+                    "name": "REGISTRY_STORAGE_AZURE_ACCOUNTKEY",
+                    "value": "[parameters('storageKey')]"
+                },
+                {
+                    "name": "REGISTRY_STORAGE_AZURE_ACCOUNTNAME",
+                    "value": "[parameters('storageName')]"
+                },
+                {
+                    "name": "REGISTRY_STORAGE_AZURE_CONTAINER",
+                    "value": "[parameters('storageContainer')]"
                 }
             ]
           }
