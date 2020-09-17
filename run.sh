@@ -18,4 +18,6 @@ strgKey=$(az storage account keys list --account-name $strgName | jq -r '. | fir
 
 az storage blob upload --account-name $strgName --account-key $strgKey --container-name $strgConfig --name $authConfig --file $authConfig
 
+registryName=$(az deployment group create --resource-group $grpName --template-uri https://raw.githubusercontent.com/groovy-sky/self-registry/master/Template/registry.json --parameters htpasswdPath=$strgConfig/$authConfig storageName=$strgName storageKey=$strgKey storageContainer=$strgData | jq -r '.properties.outputs | map(.value) | add' )
+
 #https://docs.microsoft.com/en-us/cli/azure/webapp/config/storage-account?view=azure-cli-latest

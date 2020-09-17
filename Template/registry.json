@@ -99,5 +99,11 @@
           }
       }
     }
-  ]
+  ],
+  "outputs": {
+    "storageAccountName": {
+      "type": "string",
+      "value": "[variables('webAppPortalName')]"
+    }
+  }
 }
