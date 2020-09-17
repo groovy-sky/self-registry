@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# Variables definition
-grpName="demo-registry-group"
-grpRegion="westeurope"
-strgConfig="config"
-strgData="data"
-authConfig='htpasswd'
-
 echo -e "[INFO] Working on htpasswd generation\n"
 go get -u golang.org/x/crypto/bcrypt
 go get -u golang.org/x/crypto/ssh/terminal
