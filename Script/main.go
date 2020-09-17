@@ -59,5 +59,5 @@ func main() {
     htpasswd.WriteString(username + ":" +hash)
     htpasswd.Sync()
 
-    fmt.Println("\n[Done] htpasswd was successfully generate")
+    fmt.Println("\n[INFO] htpasswd was successfully generate\n")
 }
