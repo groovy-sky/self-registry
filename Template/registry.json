@@ -56,6 +56,11 @@
       ],
       "properties": {
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]",
+        "hostNameSslStates": [
+        {
+          "sslState": "SniEnabled"
+        }
+      ],
         "siteConfig": {
             "linuxFxVersion": "[parameters('linuxFxVersion')]",
             "appSettings": [
